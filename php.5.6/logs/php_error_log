@@ -1,0 +1,595 @@
+[28-Jul-2015 01:59:19 UTC] PHP Warning:  PHP Startup:  in Unknown on line 0
+[28-Jul-2015 04:01:26 UTC] PHP Warning:  PHP Startup: bz2: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:27 UTC] PHP Warning:  PHP Startup: curl: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:27 UTC] PHP Warning:  PHP Startup: mbstring: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:27 UTC] PHP Warning:  PHP Startup: exif: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:27 UTC] PHP Warning:  PHP Startup: gd: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:27 UTC] PHP Warning:  PHP Startup: gettext: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:27 UTC] PHP Warning:  PHP Startup: mysql: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:27 UTC] PHP Warning:  PHP Startup: mysqli: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:27 UTC] PHP Warning:  PHP Startup: openssl: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:27 UTC] PHP Warning:  PHP Startup: pdo_mysql: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:27 UTC] PHP Warning:  PHP Startup: pdo_sqlite: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:27 UTC] PHP Warning:  PHP Startup: soap: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:27 UTC] PHP Warning:  PHP Startup: sockets: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:27 UTC] PHP Warning:  PHP Startup: sqlite3: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:27 UTC] PHP Warning:  PHP Startup: xmlrpc: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:27 UTC] PHP Warning:  PHP Startup: xsl: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:27 UTC] PHP Warning:  PHP Startup: runkit: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:27 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'D:\Server\xampp\php\ext\php_ssh2.dll' - 找不到指定的模块。
+ in Unknown on line 0
+[28-Jul-2015 04:01:28 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'D:\Server\xampp\php\ext\php_phalcon.dll' - 找不到指定的程序。
+ in Unknown on line 0
+[28-Jul-2015 04:01:28 UTC] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:28 UTC] PHP Warning:  PHP Startup: XCache: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:28 UTC] PHP Warning:  PHP Startup: bz2: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:28 UTC] PHP Warning:  PHP Startup: curl: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:28 UTC] PHP Warning:  PHP Startup: mbstring: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:28 UTC] PHP Warning:  PHP Startup: exif: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:28 UTC] PHP Warning:  PHP Startup: gd: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:28 UTC] PHP Warning:  PHP Startup: gettext: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:28 UTC] PHP Warning:  PHP Startup: mysql: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:28 UTC] PHP Warning:  PHP Startup: mysqli: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:28 UTC] PHP Warning:  PHP Startup: openssl: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:28 UTC] PHP Warning:  PHP Startup: pdo_mysql: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:28 UTC] PHP Warning:  PHP Startup: pdo_sqlite: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:28 UTC] PHP Warning:  PHP Startup: soap: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:28 UTC] PHP Warning:  PHP Startup: sockets: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:28 UTC] PHP Warning:  PHP Startup: sqlite3: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:28 UTC] PHP Warning:  PHP Startup: xmlrpc: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:28 UTC] PHP Warning:  PHP Startup: xsl: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:28 UTC] PHP Warning:  PHP Startup: runkit: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:28 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'D:\Server\xampp\php\ext\php_ssh2.dll' - 找不到指定的模块。
+ in Unknown on line 0
+[28-Jul-2015 04:01:29 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'D:\Server\xampp\php\ext\php_phalcon.dll' - 找不到指定的程序。
+ in Unknown on line 0
+[28-Jul-2015 04:01:29 UTC] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:29 UTC] PHP Warning:  PHP Startup: XCache: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:35 UTC] PHP Warning:  PHP Startup: bz2: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:35 UTC] PHP Warning:  PHP Startup: curl: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:35 UTC] PHP Warning:  PHP Startup: mbstring: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:35 UTC] PHP Warning:  PHP Startup: exif: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:35 UTC] PHP Warning:  PHP Startup: gd: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:35 UTC] PHP Warning:  PHP Startup: gettext: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:35 UTC] PHP Warning:  PHP Startup: mysql: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:35 UTC] PHP Warning:  PHP Startup: mysqli: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:35 UTC] PHP Warning:  PHP Startup: openssl: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:35 UTC] PHP Warning:  PHP Startup: pdo_mysql: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:35 UTC] PHP Warning:  PHP Startup: pdo_sqlite: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:35 UTC] PHP Warning:  PHP Startup: soap: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:35 UTC] PHP Warning:  PHP Startup: sockets: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:35 UTC] PHP Warning:  PHP Startup: sqlite3: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:35 UTC] PHP Warning:  PHP Startup: xmlrpc: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:35 UTC] PHP Warning:  PHP Startup: xsl: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:35 UTC] PHP Warning:  PHP Startup: runkit: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:35 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'D:\Server\xampp\php\ext\php_ssh2.dll' - 找不到指定的模块。
+ in Unknown on line 0
+[28-Jul-2015 04:01:53 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'D:\Server\xampp\php\ext\php_phalcon.dll' - 找不到指定的程序。
+ in Unknown on line 0
+[28-Jul-2015 04:01:53 UTC] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:53 UTC] PHP Warning:  PHP Startup: XCache: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:53 UTC] PHP Warning:  PHP Startup: bz2: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:53 UTC] PHP Warning:  PHP Startup: curl: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:53 UTC] PHP Warning:  PHP Startup: mbstring: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:53 UTC] PHP Warning:  PHP Startup: exif: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:53 UTC] PHP Warning:  PHP Startup: gd: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:53 UTC] PHP Warning:  PHP Startup: gettext: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:53 UTC] PHP Warning:  PHP Startup: mysql: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:53 UTC] PHP Warning:  PHP Startup: mysqli: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:53 UTC] PHP Warning:  PHP Startup: openssl: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:53 UTC] PHP Warning:  PHP Startup: pdo_mysql: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:53 UTC] PHP Warning:  PHP Startup: pdo_sqlite: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:53 UTC] PHP Warning:  PHP Startup: soap: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:53 UTC] PHP Warning:  PHP Startup: sockets: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:53 UTC] PHP Warning:  PHP Startup: sqlite3: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:53 UTC] PHP Warning:  PHP Startup: xmlrpc: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:53 UTC] PHP Warning:  PHP Startup: xsl: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:53 UTC] PHP Warning:  PHP Startup: runkit: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:53 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'D:\Server\xampp\php\ext\php_ssh2.dll' - 找不到指定的模块。
+ in Unknown on line 0
+[28-Jul-2015 04:01:55 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'D:\Server\xampp\php\ext\php_phalcon.dll' - 找不到指定的程序。
+ in Unknown on line 0
+[28-Jul-2015 04:01:55 UTC] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:01:55 UTC] PHP Warning:  PHP Startup: XCache: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:02:40 UTC] PHP Warning:  PHP Startup: bz2: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:02:40 UTC] PHP Warning:  PHP Startup: curl: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:02:40 UTC] PHP Warning:  PHP Startup: mbstring: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:02:40 UTC] PHP Warning:  PHP Startup: exif: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:02:40 UTC] PHP Warning:  PHP Startup: gd: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:02:40 UTC] PHP Warning:  PHP Startup: gettext: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:02:40 UTC] PHP Warning:  PHP Startup: mysql: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:02:40 UTC] PHP Warning:  PHP Startup: mysqli: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:02:40 UTC] PHP Warning:  PHP Startup: openssl: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:02:40 UTC] PHP Warning:  PHP Startup: pdo_mysql: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:02:40 UTC] PHP Warning:  PHP Startup: pdo_sqlite: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:02:40 UTC] PHP Warning:  PHP Startup: soap: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:02:40 UTC] PHP Warning:  PHP Startup: sockets: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:02:40 UTC] PHP Warning:  PHP Startup: sqlite3: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:02:40 UTC] PHP Warning:  PHP Startup: xmlrpc: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:02:40 UTC] PHP Warning:  PHP Startup: xsl: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:02:40 UTC] PHP Warning:  PHP Startup: runkit: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:02:40 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'D:\Server\xampp\php\ext\php_ssh2.dll' - 找不到指定的模块。
+ in Unknown on line 0
+[28-Jul-2015 04:02:41 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'D:\Server\xampp\php\ext\php_phalcon.dll' - 找不到指定的程序。
+ in Unknown on line 0
+[28-Jul-2015 04:02:41 UTC] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:02:41 UTC] PHP Warning:  PHP Startup: XCache: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:02:42 UTC] PHP Warning:  PHP Startup: bz2: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:02:42 UTC] PHP Warning:  PHP Startup: curl: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:02:42 UTC] PHP Warning:  PHP Startup: mbstring: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:02:42 UTC] PHP Warning:  PHP Startup: exif: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:02:42 UTC] PHP Warning:  PHP Startup: gd: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:02:42 UTC] PHP Warning:  PHP Startup: gettext: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:02:42 UTC] PHP Warning:  PHP Startup: mysql: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:02:42 UTC] PHP Warning:  PHP Startup: mysqli: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:02:42 UTC] PHP Warning:  PHP Startup: openssl: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:02:42 UTC] PHP Warning:  PHP Startup: pdo_mysql: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:02:42 UTC] PHP Warning:  PHP Startup: pdo_sqlite: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:02:42 UTC] PHP Warning:  PHP Startup: soap: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:02:42 UTC] PHP Warning:  PHP Startup: sockets: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:02:42 UTC] PHP Warning:  PHP Startup: sqlite3: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:02:42 UTC] PHP Warning:  PHP Startup: xmlrpc: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:02:42 UTC] PHP Warning:  PHP Startup: xsl: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:02:42 UTC] PHP Warning:  PHP Startup: runkit: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:02:42 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'D:\Server\xampp\php\ext\php_ssh2.dll' - 找不到指定的模块。
+ in Unknown on line 0
+[28-Jul-2015 04:02:43 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'D:\Server\xampp\php\ext\php_phalcon.dll' - 找不到指定的程序。
+ in Unknown on line 0
+[28-Jul-2015 04:02:43 UTC] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0
+[28-Jul-2015 04:02:43 UTC] PHP Warning:  PHP Startup: XCache: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20121212
+These options need to match
+ in Unknown on line 0

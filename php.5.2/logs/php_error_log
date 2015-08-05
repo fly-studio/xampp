@@ -1,0 +1,8 @@
+[29-Jul-2015 12:57:34] PHP Warning:  include(__DIR__/project/kohana/modules/addons/func/array.func.php): failed to open stream: No such file or directory in D:\Website\test1.php on line 4
+[29-Jul-2015 12:57:34] PHP Warning:  include(): Failed opening '__DIR__/project/kohana/modules/addons/func/array.func.php' for inclusion (include_path='.;D:\Server\xampp\php.5.2\pear\') in D:\Website\test1.php on line 4
+[29-Jul-2015 12:57:34] PHP Warning:  include(__DIR__/project/kohana/modules/addons/func/file.func.php): failed to open stream: No such file or directory in D:\Website\test1.php on line 5
+[29-Jul-2015 12:57:34] PHP Warning:  include(): Failed opening '__DIR__/project/kohana/modules/addons/func/file.func.php' for inclusion (include_path='.;D:\Server\xampp\php.5.2\pear\') in D:\Website\test1.php on line 5
+[29-Jul-2015 12:57:34] PHP Warning:  include(__DIR__/project/kohana/modules/addons/func/time.func.php): failed to open stream: No such file or directory in D:\Website\test1.php on line 6
+[29-Jul-2015 12:57:34] PHP Warning:  include(): Failed opening '__DIR__/project/kohana/modules/addons/func/time.func.php' for inclusion (include_path='.;D:\Server\xampp\php.5.2\pear\') in D:\Website\test1.php on line 6
+[29-Jul-2015 07:42:28] PHP Warning:  Cannot open 'D:\Server\xampp\browscap.ini' for reading in Unknown on line 0
+[29-Jul-2015 07:42:32] PHP Warning:  Cannot open 'D:\Server\xampp\browscap.ini' for reading in Unknown on line 0
