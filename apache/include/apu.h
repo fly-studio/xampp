@@ -134,7 +134,7 @@
 #define APU_HAVE_CRYPTO         1
 
 #ifndef APU_DSO_MODULE_BUILD
-#define APU_HAVE_OPENSSL        0
+#define APU_HAVE_OPENSSL        1
 #define APU_HAVE_NSS            0
 #endif
 

@@ -593,3 +593,8 @@ Module compiled with module API=20131226
 PHP    compiled with module API=20121212
 These options need to match
  in Unknown on line 0
+[10-Sep-2015 02:57:54 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'D:\Server\xampp\php.5.6\ext\php_imagick.dll' - 应用程序无法启动，因为应用程序的并行配置不正确。有关详细信息，请参阅应用程序事件日志，或使用命令行 sxstrace.exe 工具。
+ in Unknown on line 0
+[10-Sep-2015 02:58:38 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'D:\Server\xampp\php.5.6\ext\php_imagick.dll' - 应用程序无法启动，因为应用程序的并行配置不正确。有关详细信息，请参阅应用程序事件日志，或使用命令行 sxstrace.exe 工具。
+ in Unknown on line 0
+[10-Sep-2015 02:58:38 UTC] PHP Fatal error:  Unknown: Failed opening required '-' (include_path='.;D:\Server\xampp\php.5.6\PEAR') in Unknown on line 0

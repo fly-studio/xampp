@@ -1,7 +1,7 @@
 This snapshot was automatically generated on
-Thu, 09 Jul 2015 19:38:12 +0000
+Wed, 05 Aug 2015 21:03:47 +0000
 
-Version: 5.5.27
+Version: 5.5.28
 Branch: HEAD
 Build: C:\php-sdk\php55\vc11\x86\obj\Release_TS
 
