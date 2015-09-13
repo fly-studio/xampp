@@ -21,14 +21,14 @@ call %CD%\mysql_stop.bat
 echo.
 echo 清除log文件中...
 
-echo. >"%CD%\apache\logs\access.log"
-echo. >"%CD%\apache\logs\error.log"
-echo. >"%CD%\apache\logs\ssl_request.log"
+echo off  >"%CD%\apache\logs\access.log"
+echo off  >"%CD%\apache\logs\error.log"
+echo off  >"%CD%\apache\logs\ssl_request.log"
 if exist "%CD%\xampp-control.log" (del "%CD%\xampp-control.log")
 
 for /f "delims=" %%i in ('dir /b /a:d /on "%CD%\php.*" ^|findstr /i "php."') do (
 	rem 完整路径为 %%~ti%%~dpnxi
-	echo. >"%CD%\%%i\php_error_log"
+	echo off >"%CD%\%%i\logs\php_error_log"
 )
 echo done!
 
@@ -43,6 +43,7 @@ call :dellink %i%
 
 for /f "delims=" %%i in ('dir /b /a:d /on "%CD%\php.*" ^|findstr /i "php."') do (
 	call :dellink %%i
+	
 )
 goto exit
 
