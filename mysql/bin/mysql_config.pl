@@ -27,7 +27,7 @@
 #  All unrecognized arguments to this script are passed to mysqld.
 #
 #  NOTE: This script will only be used on Windows until solved how to
-#        handle ws2_32  and other strings inserted that might contain
+#        handle -lmysqlclient  ws2_32 IPHLPAPI   and other strings inserted that might contain
 #        several arguments, possibly with spaces in them.
 #
 #  NOTE: This script was deliberately written to be as close to the shell
@@ -42,8 +42,9 @@ use Cwd;
 use strict;
 
 my @exclude_cflags =
-  qw/DDBUG_OFF DSAFE_MUTEX DFORCE_INIT_OF_VARS
-     DEXTRA_DEBUG DHAVE_purify O O[0-9] xO[0-9] W[-A-Za-z]*
+  qw/DDBUG_OFF DSAFE_MUTEX DUNIV_MUST_NOT_INLINE DFORCE_INIT_OF_VARS
+     DEXTRA_DEBUG DHAVE_valgrind O O[0-9] xO[0-9] W[-A-Za-z]*
+     Xa xstrconst xc99=none
      unroll2 ip mp restrict/;
 
 my @exclude_libs = qw/lmtmalloc static-libcxa i-static static-intel/;
@@ -52,7 +53,7 @@ my $cwd = cwd();
 my $basedir;
 
 my $socket  = '/tmp/mysql.sock';
-my $version = '5.6.25';
+my $version = '10.1.13';
 
 sub which
 {
@@ -148,7 +149,7 @@ sub quote_options {
 my $me = get_full_path($0);
 $basedir = dirname(dirname($me)); # Remove "/bin/mysql_config" part
 
-my $ldata   = 'C:/Program Files/MySQL/MySQL Server 5.6/data';
+my $ldata   = 'C:/MariaDB10.1/data';
 my $execdir = 'C:/Program Files (x86)/MySQL/bin';
 my $bindir  = 'C:/Program Files (x86)/MySQL/bin';
 
@@ -159,7 +160,7 @@ my $bindir  = 'C:/Program Files (x86)/MySQL/bin';
 my $pkglibdir = fix_path('C:/Program Files (x86)/MySQL/lib',"libmysql/relwithdebinfo",
                          "libmysql/release","libmysql/debug","lib/mysql","lib");
 
-my $pkgincludedir = fix_path('C:/Program Files (x86)/MySQL/include', "include/mysql", "include");
+my $pkgincludedir = fix_path('C:/Program Files (x86)/MySQL/include/mysql', "include/mysql", "include");
 
 # Assume no argument with space in it
 my @ldflags = split(" ",'');
@@ -196,18 +197,19 @@ else
 
 my $flags;
 $flags->{libs} =
-  [@ldflags,@lib_opts,'','ws2_32 Secur32 ','',''];
+  [@ldflags,@lib_opts,'','','',''];
 $flags->{libs_r} =
-  [@ldflags,@lib_r_opts,'','ws2_32 ',''];
+  [@ldflags,@lib_r_opts,'','-lmysqlclient  ws2_32 IPHLPAPI  ',''];
 $flags->{embedded_libs} =
-  [@ldflags,@lib_e_opts,'','','ws2_32 ','',''];
+  [@ldflags,@lib_e_opts,'','','-lmysqlclient  ws2_32 IPHLPAPI  ','',''];
 
 $flags->{include} = ["-I$pkgincludedir"];
-$flags->{cflags}  = [@{$flags->{include}},split(" ",'/MT /Z7 /O2 /Ob1 /D NDEBUG /EHsc -DDBUG_OFF')];
-$flags->{cxxflags}= [@{$flags->{include}},split(" ",'/MT /Z7 /O2 /Ob1 /D NDEBUG /EHsc -DDBUG_OFF')];
+$flags->{cflags}  = [@{$flags->{include}},split(" ",'')];
 
 # ----------------------------------------------------------------------
 # Remove some options that a client doesn't have to care about
+# FIXME until we have a --cxxflags, we need to remove -Xa
+#       and -xstrconst to make --cflags usable for Sun Forte C++
 # ----------------------------------------------------------------------
 
 my $filter = join("|", @exclude_cflags);
@@ -216,12 +218,6 @@ $flags->{cflags} = [];                  # Clear it
 foreach my $cflag ( @tmp )
 {
   push(@{$flags->{cflags}}, $cflag) unless $cflag =~ m/^($filter)$/o;
-}
-@tmp = @{$flags->{cxxflags}};           # Copy the flag list
-$flags->{cxxflags} = [];                # Clear it
-foreach my $cxxflag ( @tmp )
-{
-  push(@{$flags->{cxxflags}}, $cxxflag) unless $cxxflag =~ m/^($filter)$/o;
 }
 
 # Same for --libs(_r)
@@ -238,7 +234,6 @@ foreach my $lib_type ( "libs","libs_r","embedded_libs" )
 
 my $include =       quote_options(@{$flags->{include}});
 my $cflags  =       quote_options(@{$flags->{cflags}});
-my $cxxflags=       quote_options(@{$flags->{cxxflags}});
 my $libs    =       quote_options(@{$flags->{libs}});
 my $libs_r  =       quote_options(@{$flags->{libs_r}});
 my $embedded_libs = quote_options(@{$flags->{embedded_libs}});
@@ -255,7 +250,6 @@ sub usage
 Usage: $0 [OPTIONS]
 Options:
         --cflags         [$cflags]
-        --cxxflags       [$cxxflags]
         --include        [$include]
         --libs           [$libs]
         --libs_r         [$libs_r]
@@ -264,7 +258,7 @@ Options:
         --version        [$version]
         --libmysqld-libs [$embedded_libs]
 EOF
-  exit 1;
+  exit 0;
 }
 
 @ARGV or usage();
@@ -277,7 +271,6 @@ EOF
 
 GetOptions(
            "cflags"  => sub { print "$cflags\n" },
-           "cxxflags"=> sub { print "$cxxflags\n" },
            "include" => sub { print "$include\n" },
            "libs"    => sub { print "$libs\n" },
            "libs_r"  => sub { print "$libs_r\n" },
