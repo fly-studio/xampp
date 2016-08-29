@@ -54,6 +54,18 @@ if not "%1"=="" (
 		for /f "tokens=3,4 delims= " %%c in ('dir "%CD%\%1" ^| FIND "<SYMLINK"') do (
 			if "%%c" == "<SYMLINKD>" (rmdir %CD%\%1\%%d) else (del %CD%\%1\%%d)
 		)
+		for /f "tokens=3,4 delims= " %%c in ('dir "%CD%\%1" ^| FIND "CORE_RL"') do (
+			del %CD%\%1\%%d
+		)
+		for /f "tokens=3,4 delims= " %%c in ('dir "%CD%\%1" ^| FIND "IM_MOD_RL"') do (
+			del %CD%\%1\%%d
+		)
+		for /f "tokens=3,4 delims= " %%c in ('dir "%CD%\%1" ^| FIND "msvc"') do (
+			del %CD%\%1\%%d
+		)
+		for /f "tokens=3,4 delims= " %%c in ('dir "%CD%\%1" ^| FIND "vcomp"') do (
+			del %CD%\%1\%%d
+		)
 		echo done!
 		echo.
 	)
