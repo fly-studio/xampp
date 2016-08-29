@@ -29,8 +29,8 @@ FOR %%x IN ("D:\Server\xampp\php\pear") DO (if %%x=="%PMTPMTPMT%" GOTO :NOTINSTA
 
 REM Check PEAR global ENV, set them if they do not exist
 IF "%PHP_PEAR_INSTALL_DIR%"=="" SET "PHP_PEAR_INSTALL_DIR=D:\Server\xampp\php\pear"
-IF "%PHP_PEAR_BIN_DIR%"=="" SET "PHP_PEAR_BIN_DIR=D:\Server\xampp\php"
-IF "%PHP_PEAR_PHP_BIN%"=="" SET "PHP_PEAR_PHP_BIN=D:\Server\xampp\php\.\php.exe"
+IF "%PHP_PEAR_BIN_DIR%"=="" SET "PHP_PEAR_BIN_DIR=D:\Server\xampp\php\"
+IF "%PHP_PEAR_PHP_BIN%"=="" SET "PHP_PEAR_PHP_BIN=D:\Server\xampp\php\php.exe"
 GOTO :INSTALLED
 
 :NOTINSTALLED
