@@ -15,7 +15,7 @@ if exist "%CD%\php\" (
 
 :main
 echo 请输入需要切换PHP的版本
-set /p version=(比如：5.2 5.3 5.4，5.5，5.6，6.0，7.0)：
+set /p version=(比如：5.2 5.3 5.4，5.5，5.6，7.0)：
 
 echo.
 
@@ -35,6 +35,13 @@ echo.
 echo 正在切换PHP版本为 %version%
 if exist "%CD%\php\" (rmdir "%CD%\php\")
 mklink /D "%CD%\php\" "%CD%\php.%version%\"
+
+if "%version%"=="7.0" (
+	copy /y "%CD%\apache\conf\extra\httpd-xampp7" "%CD%\apache\conf\extra\httpd-xampp.conf"
+) else (
+	copy /y "%CD%\apache\conf\extra\httpd-xampp5" "%CD%\apache\conf\extra\httpd-xampp.conf"
+)
+
 
 echo.
 echo  -----------------------------------------

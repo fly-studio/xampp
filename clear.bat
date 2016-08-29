@@ -24,6 +24,7 @@ echo 清除log文件中...
 echo off  >"%CD%\apache\logs\access.log"
 echo off  >"%CD%\apache\logs\error.log"
 echo off  >"%CD%\apache\logs\ssl_request.log"
+del %CD%\apache\conf\extra\httpd-xampp.conf
 if exist "%CD%\xampp-control.log" (del "%CD%\xampp-control.log")
 
 for /f "delims=" %%i in ('dir /b /a:d /on "%CD%\php.*" ^|findstr /i "php."') do (
