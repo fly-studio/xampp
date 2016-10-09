@@ -1,0 +1,14 @@
+apache/conf/extra/httpd-xampp.conf
+apache/bin/api-ms-win-*.dll
+apache/bin/CORE_RL*
+apache/bin/IM_MOD*
+apache/bin/msvc*.dll
+apache/bin/ucrtbase.dll
+apache/bin/vc*.dll
+php*/api-ms-win-*.dll
+php*/CORE_RL*
+php*/IM_MOD*
+php*/msvc*.dll
+php*/ucrtbase.dll
+php*/concrt*.dll
+php*/vc*.dll

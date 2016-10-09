@@ -873,7 +873,7 @@ extension=php_gmp.dll
 ;extension=php_imap.dll
 ;extension=php_interbase.dll
 ;extension=php_ldap.dll
-;extension=php_mbstring.dll
+extension=php_mbstring.dll
 ;extension=php_exif.dll      ; Must be after mbstring as it depends on it
 ;extension=php_mysqli.dll
 ;extension=php_oci8_12c.dll  ; Use with Oracle Database 12c Instant Client
@@ -1729,11 +1729,12 @@ ldap.max_links = -1
 ;dba.default_handler=
 
 [opcache]
+zend_extension="php_opcache.dll"
 ; Determines if Zend OPCache is enabled
-;opcache.enable=0
+opcache.enable=1
 
 ; Determines if Zend OPCache is enabled for the CLI version of PHP
-;opcache.enable_cli=0
+opcache.enable_cli=1
 
 ; The OPcache shared memory storage size.
 ;opcache.memory_consumption=64
