@@ -1,0 +1,3 @@
+CORE_RL_*.dll
+CORE_RL_*.pdb
+这些文件属于PHP中的Imagick调用

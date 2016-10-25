@@ -1,0 +1,2 @@
+IM_MOD_RL_*.dll
+这些文件属于PHP中的Imagick调用
