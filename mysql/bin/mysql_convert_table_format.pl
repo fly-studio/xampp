@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# Copyright (c) 2000-2002, 2006, 2007 MySQL AB, 2009 Sun Microsystems, Inc.
+# Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
 # Use is subject to license terms.
 # 
 # This program is free software; you can redistribute it and/or modify
@@ -29,7 +29,7 @@ $opt_port=0;
 $exit_status=0;
 
 GetOptions(
-  "e|engine|type=s"       => \$opt_engine,
+  "e|engine|type=s"       => \$opt_type,
   "f|force"               => \$opt_force,
   "help|?"               => \$opt_help,
   "h|host=s"              => \$opt_host,
@@ -40,6 +40,8 @@ GetOptions(
   "S|socket=s"            => \$opt_socket, 
   "P|port=i"              => \$opt_port
 ) || usage(0);
+
+print STDERR "Warning: $0 is deprecated and will be removed in a future version.\n";
 
 usage($opt_version) if ($#ARGV < 0 || $opt_help || $opt_version);
 
@@ -125,7 +127,7 @@ sub usage
 
   print <<EOF;
 
-Conversion of a MariaDB tables to other storage engines
+Conversion of a MySQL tables to other storage engines
 
  Usage: $0 database [table[ table ...]]
  If no tables has been specifed, all tables in the database will be converted.
