@@ -1,6 +1,23 @@
 #!/usr/bin/perl
+# Copyright (c) 2000, 2010, Oracle and/or its affiliates.
+# Copyright (c) 2000-2011 Monty Program Ab, Jani Tolonen
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Library General Public
+# License as published by the Free Software Foundation; version 2
+# of the License.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# Library General Public License for more details.
+#
+# You should have received a copy of the GNU Library General Public
+# License along with this library; if not, write to the Free
+# Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston,
+# MA 02110-1301, USA
 
-# Copyright (c) 2000, 2011, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2000, 2016, Oracle and/or its affiliates. All rights reserved.
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Library General Public
@@ -19,10 +36,9 @@
 
 use Getopt::Long;
 use POSIX qw(strftime getcwd);
-use File::Path qw(mkpath);
 
 $|=1;
-$VER="2.16";
+$VER="2.20";
 
 my @defaults_options;   #  Leading --no-defaults, --defaults-file, etc.
 
@@ -38,6 +54,7 @@ $opt_user          = "root";
 $opt_version       = 0;
 $opt_silent        = 0;
 $opt_verbose       = 0;
+$opt_wsrep_new_cluster = 0;
 
 my $my_print_defaults_exists= 1;
 my $logdir= undef();
@@ -87,7 +104,7 @@ sub main
     print "WARNING: my_print_defaults command not found.\n";
     print "Please make sure you have this command available and\n";
     print "in your path. The command is available from the latest\n";
-    print "MySQL distribution.\n";
+    print "MariaDB distribution.\n";
     $my_print_defaults_exists= 0;
   }
 
@@ -110,7 +127,7 @@ sub main
   # We've already handled --no-defaults, --defaults-file, etc.
   if (!GetOptions("help", "example", "version", "mysqld=s", "mysqladmin=s",
                   "user=s", "password=s", "log=s", "no-log",
-                  "tcp-ip",  "silent", "verbose"))
+                  "tcp-ip",  "silent", "verbose", "wsrep-new-cluster"))
   {
     $flag_exit= 1;
   }
@@ -138,7 +155,7 @@ sub main
   if (!defined(my_which(my_print_defaults)))
   {
     print "ABORT: Can't find command 'my_print_defaults'.\n";
-    print "This command is available from the latest MySQL\n";
+    print "This command is available from the latest MariaDB\n";
     print "distribution. Please make sure you have the command\n";
     print "in your PATH.\n";
     exit(1);
@@ -146,7 +163,6 @@ sub main
   usage() if (!defined($ARGV[0]) ||
 	      (!($ARGV[0] =~ m/^start$/i) &&
 	       !($ARGV[0] =~ m/^stop$/i) &&
-	       !($ARGV[0] =~ m/^reload$/i) &&
 	       !($ARGV[0] =~ m/^report$/i)));
 
   if (!$opt_no_log)
@@ -160,7 +176,7 @@ sub main
     print strftime "%a %b %e %H:%M:%S %Y", localtime;
     print "\n";
   }
-  if (($ARGV[0] =~ m/^start$/i) || ($ARGV[0] =~ m/^reload$/i))
+  if ($ARGV[0] =~ m/^start$/i)
   {
     if (!defined(($mysqld= my_which($opt_mysqld))) && $opt_verbose)
     {
@@ -169,11 +185,7 @@ sub main
       print "This is OK, if you are using option \"mysqld=...\" in ";
       print "groups [mysqldN] separately for each.\n\n";
     }
-    if ($ARGV[0] =~ m/^start$/i) {
-      start_mysqlds();
-    } elsif ($ARGV[0] =~ m/^reload$/i) {
-      reload_mysqlds();
-    }
+    start_mysqlds();
   }
   else
   {
@@ -207,6 +219,10 @@ sub quote_shell_word
   return $option;
 }
 
+####
+#### get options for a group
+####
+
 sub defaults_for_group
 {
   my ($group) = @_;
@@ -226,7 +242,7 @@ sub defaults_for_group
 
 sub init_log
 {
-  foreach my $opt (defaults_for_group('mysqld'))
+  foreach my $opt (defaults_for_group('--mysqld'))
   {
     if ($opt =~ m/^--datadir=(.*)/ && -d "$1" && -w "$1")
     {
@@ -254,17 +270,17 @@ sub init_log
 }
 
 ####
-#### Report living and not running MySQL servers
+#### Report living and not running MariaDB servers
 ####
 
 sub report_mysqlds
 {
   my (@groups, $com, $i, @options, $pec);
 
-  print "Reporting MySQL servers\n";
+  print "Reporting MariaDB servers\n";
   if (!$opt_no_log)
   {
-    w2log("\nReporting MySQL servers","$opt_log",0,0);
+    w2log("\nReporting MariaDB servers","$opt_log",0,0);
   }
   @groups = &find_groups($groupids);
   for ($i = 0; defined($groups[$i]); $i++)
@@ -275,19 +291,19 @@ sub report_mysqlds
     $pec = $? >> 8;
     if ($pec)
     {
-      print "MySQL server from group: $groups[$i] is not running\n";
+      print "MariaDB server from group: $groups[$i] is not running\n";
       if (!$opt_no_log)
       {
-	w2log("MySQL server from group: $groups[$i] is not running",
+	w2log("MariaDB server from group: $groups[$i] is not running",
 	      "$opt_log", 0, 0);
       }
     }
     else
     {
-      print "MySQL server from group: $groups[$i] is running\n";
+      print "MariaDB server from group: $groups[$i] is running\n";
       if (!$opt_no_log)
       {
-	w2log("MySQL server from group: $groups[$i] is running",
+	w2log("MariaDB server from group: $groups[$i] is running",
 	      "$opt_log", 0, 0);
       }
     }
@@ -312,11 +328,11 @@ sub start_mysqlds()
 
   if (!$opt_no_log)
   {
-    w2log("\nStarting MySQL servers\n","$opt_log",0,0);
+    w2log("\nStarting MariaDB servers\n","$opt_log",0,0);
   }
   else
   {
-    print "\nStarting MySQL servers\n";
+    print "\nStarting MariaDB servers\n";
   }
   @groups = &find_groups($groupids);
   for ($i = 0; defined($groups[$i]); $i++)
@@ -329,39 +345,6 @@ sub start_mysqlds()
     $com= "$mysqld";
     for ($j = 0, $tmp= ""; defined($options[$j]); $j++)
     {
-      if ("--datadir=" eq substr($options[$j], 0, 10)) {
-        $datadir = $options[$j];
-        $datadir =~ s/\-\-datadir\=//;
-        eval { mkpath($datadir) };
-        if ($@) {
-          print "FATAL ERROR: Cannot create data directory $datadir: $!\n";
-          exit(1);
-        }
-        if (! -d $datadir."/mysql") {
-          if (-w $datadir) {
-            print "\n\nInstalling new database in $datadir\n\n";
-            $install_cmd="C:/Program Files (x86)/MySQL/bin/mysql_install_db ";
-            $install_cmd.="--user=mysql ";
-            $install_cmd.="--datadir=$datadir";
-            system($install_cmd);
-          } else {
-            print "\n";
-            print "FATAL ERROR: Tried to create mysqld under group [$groups[$i]],\n";
-            print "but the data directory is not writable.\n";
-            print "data directory used: $datadir\n";
-            exit(1);
-          }
-        }
-
-        if (! -d $datadir."/mysql") {
-          print "\n";
-          print "FATAL ERROR: Tried to start mysqld under group [$groups[$i]],\n";
-          print "but no data directory was found or could be created.\n";
-          print "data directory used: $datadir\n";
-          exit(1);
-        }
-      }
-
       if ("--mysqladmin=" eq substr($options[$j], 0, 13))
       {
 	# catch this and ignore
@@ -396,6 +379,11 @@ sub start_mysqlds()
       $info_sent= 1;
     }
     $com.= $tmp;
+
+    if ($opt_wsrep_new_cluster) {
+      $com.= " --wsrep-new-cluster";
+    }
+
     $com.= " >> $opt_log 2>&1" if (!$opt_no_log);
     $com.= " &";
     if (!$mysqld_found)
@@ -420,64 +408,12 @@ sub start_mysqlds()
   }
   if (!$i && !$opt_no_log)
   {
-    w2log("No MySQL servers to be started (check your GNRs)",
+    w2log("No MariaDB servers to be started (check your GNRs)",
 	  "$opt_log", 0, 0);
   }
 }
 
 ####
-#### reload multiple servers
-####
-
-sub reload_mysqlds()
-{
-  my (@groups, $com, $tmp, $i, @options, $j);
-
-  if (!$opt_no_log)
-  {
-    w2log("\nReloading MySQL servers\n","$opt_log",0,0);
-  }
-  else
-  {
-    print "\nReloading MySQL servers\n";
-  }
-  @groups = &find_groups($groupids);
-  for ($i = 0; defined($groups[$i]); $i++)
-  {
-    $mysqld_server = $mysqld;
-    @options = defaults_for_group($groups[$i]);
-
-    for ($j = 0, $tmp= ""; defined($options[$j]); $j++)
-    {
-      if ("--mysqladmin=" eq substr($options[$j], 0, 13))
-      {
-        # catch this and ignore
-      }
-      elsif ("--mysqld=" eq substr($options[$j], 0, 9))
-      {
-        $options[$j] =~ s/\-\-mysqld\=//;
-        $mysqld_server = $options[$j];
-      }
-      elsif ("--pid-file=" eq substr($options[$j], 0, 11))
-      {
-        $options[$j] =~ s/\-\-pid-file\=//;
-        $pid_file = $options[$j];
-      }
-    }
-    $com = "killproc -p $pid_file -HUP $mysqld_server";
-    system($com);
-
-    $com = "touch $pid_file";
-    system($com);
-  }
-  if (!$i && !$opt_no_log)
-  {
-    w2log("No MySQL servers to be reloaded (check your GNRs)",
-         "$opt_log", 0, 0);
-  }
-}
-
-###
 #### stop multiple servers
 ####
 
@@ -487,11 +423,11 @@ sub stop_mysqlds()
 
   if (!$opt_no_log)
   {
-    w2log("\nStopping MySQL servers\n","$opt_log",0,0);
+    w2log("\nStopping MariaDB servers\n","$opt_log",0,0);
   }
   else
   {
-    print "\nStopping MySQL servers\n";
+    print "\nStopping MariaDB servers\n";
   }
   @groups = &find_groups($groupids);
   for ($i = 0; defined($groups[$i]); $i++)
@@ -504,7 +440,7 @@ sub stop_mysqlds()
   }
   if (!$i && !$opt_no_log)
   {
-    w2log("No MySQL servers to be stopped (check your GNRs)",
+    w2log("No MariaDB servers to be stopped (check your GNRs)",
 	  "$opt_log", 0, 0);
   }
 }
@@ -560,6 +496,7 @@ sub get_mysqladmin_options
 
 # Return a list of option files which can be opened.  Similar, but not
 # identical, to behavior of my_search_option_files()
+# TODO implement and use my_print_defaults --list-groups instead
 sub list_defaults_files
 {
   my %opt;
@@ -571,9 +508,7 @@ sub list_defaults_files
 
   return ($opt{file}) if exists $opt{file};
 
-  my %seen;  # Don't list the same file more than once
-  return grep { defined $_ and not $seen{$_}++ and -f $_ and -r $_ }
-              ('/etc/my.cnf',
+  return      ('/etc/my.cnf',
                '/etc/mysql/my.cnf',
                'C:/Program Files (x86)/MySQL/my.cnf',
                ($ENV{MYSQL_HOME} ? "$ENV{MYSQL_HOME}/my.cnf" : undef),
@@ -613,11 +548,12 @@ sub find_groups
     }
   }
 
+  my %seen;
   my @defaults_files = list_defaults_files();
-  #warn "@{[sort keys %gids]} -> @defaults_files\n";
-  foreach my $file (@defaults_files)
+  while (@defaults_files)
   {
-    next unless open CONF, "< $file";
+    my $file = shift @defaults_files;
+    next unless defined $file and not $seen{$file}++ and open CONF, '<', $file;
 
     while (<CONF>)
     {
@@ -629,6 +565,14 @@ sub find_groups
         {
           push @groups, "$1$2";
         }
+      }
+      elsif (/^\s*!include\s+(\S.*?)\s*$/)
+      {
+        push @defaults_files, $1;
+      }
+      elsif (/^\s*!includedir\s+(\S.*?)\s*$/)
+      {
+        push @defaults_files, <$1/*.cnf>;
       }
     }
 
@@ -687,7 +631,11 @@ sub my_which
   my ($command) = @_;
   my (@paths, $path);
 
-  return $command if (-f $command && -x $command);
+ # If the argument is not 'my_print_defaults' then it would be of the format
+ # <absolute_path>/<program>
+ return $command if ($command ne 'my_print_defaults' && -f $command &&
+                     -x $command);
+
   @paths = split(':', $ENV{'PATH'});
   foreach $path (@paths)
   {
@@ -712,23 +660,23 @@ sub example
 #
 # 1.COMMON USER
 #
-#   Make sure that the MySQL user, who is stopping the mysqld services, has
-#   the same password to all MySQL servers being accessed by $my_progname.
+#   Make sure that the MariaDB user, who is stopping the mysqld services, has
+#   the same password to all MariaDB servers being accessed by $my_progname.
 #   This user needs to have the 'Shutdown_priv' -privilege, but for security
 #   reasons should have no other privileges. It is advised that you create a
-#   common 'multi_admin' user for all MySQL servers being controlled by
+#   common 'multi_admin' user for all MariaDB servers being controlled by
 #   $my_progname. Here is an example how to do it:
 #
 #   GRANT SHUTDOWN ON *.* TO multi_admin\@localhost IDENTIFIED BY 'password'
 #
-#   You will need to apply the above to all MySQL servers that are being
+#   You will need to apply the above to all MariaDB servers that are being
 #   controlled by $my_progname. 'multi_admin' will shutdown the servers
 #   using 'mysqladmin' -binary, when '$my_progname stop' is being called.
 #
 # 2.PID-FILE
 #
 #   If you are using mysqld_safe to start mysqld, make sure that every
-#   MySQL server has a separate pid-file. In order to use mysqld_safe
+#   MariaDB server has a separate pid-file. In order to use mysqld_safe
 #   via $my_progname, you need to use two options:
 #
 #   mysqld=/path/to/mysqld_safe
@@ -741,7 +689,7 @@ sub example
 #
 # 3.DATA DIRECTORY
 #
-#   It is NOT advised to run many MySQL servers within the same data directory.
+#   It is NOT advised to run many MariaDB servers within the same data directory.
 #   You can do so, but please make sure to understand and deal with the
 #   underlying caveats. In short they are:
 #   - Speed penalty
@@ -762,7 +710,7 @@ sub example
 #   intentionally left out. You may have 'gaps' in the config file. This
 #   gives you more flexibility.
 #
-# 6.MySQL Server User
+# 6.MariaDB Server User
 #
 #   You can pass the user=... option inside [mysqld#] groups. This
 #   can be very handy in some cases, but then you need to run $my_progname
@@ -770,7 +718,7 @@ sub example
 #
 # 7.A Start-up Manage Script for $my_progname
 #
-#   In the recent MySQL distributions you can find a file called
+#   In the recent MariaDB distributions you can find a file called
 #   mysqld_multi.server.sh. It is a wrapper for $my_progname. This can
 #   be used to start and stop multiple servers during boot and shutdown.
 #
@@ -783,7 +731,7 @@ sub example
 #   or /root/.my.cnf and add the [mysqld_multi] and [mysqld#] groups.
 #
 #   The script can be found from support-files/mysqld_multi.server.sh
-#   in MySQL distribution. (Verify the script before using)
+#   in MariaDB distribution. (Verify the script before using)
 #
 
 [mysqld_multi]
@@ -795,8 +743,8 @@ password   = my_password
 [mysqld2]
 socket     = /tmp/mysql.sock2
 port       = 3307
-pid-file   = C:/Program Files/MySQL/MySQL Server 5.6/data2/hostname.pid2
-datadir    = C:/Program Files/MySQL/MySQL Server 5.6/data2
+pid-file   = C:/Program Files/MariaDB 10.1/data2/hostname.pid2
+datadir    = C:/Program Files/MariaDB 10.1/data2
 language   = C:/Program Files (x86)/MySQL/share/mysql/english
 user       = unix_user1
 
@@ -806,24 +754,24 @@ ledir      = /path/to/mysqld-binary/
 mysqladmin = /path/to/mysqladmin
 socket     = /tmp/mysql.sock3
 port       = 3308
-pid-file   = C:/Program Files/MySQL/MySQL Server 5.6/data3/hostname.pid3
-datadir    = C:/Program Files/MySQL/MySQL Server 5.6/data3
+pid-file   = C:/Program Files/MariaDB 10.1/data3/hostname.pid3
+datadir    = C:/Program Files/MariaDB 10.1/data3
 language   = C:/Program Files (x86)/MySQL/share/mysql/swedish
 user       = unix_user2
 
 [mysqld4]
 socket     = /tmp/mysql.sock4
 port       = 3309
-pid-file   = C:/Program Files/MySQL/MySQL Server 5.6/data4/hostname.pid4
-datadir    = C:/Program Files/MySQL/MySQL Server 5.6/data4
+pid-file   = C:/Program Files/MariaDB 10.1/data4/hostname.pid4
+datadir    = C:/Program Files/MariaDB 10.1/data4
 language   = C:/Program Files (x86)/MySQL/share/mysql/estonia
 user       = unix_user3
  
 [mysqld6]
 socket     = /tmp/mysql.sock6
 port       = 3311
-pid-file   = C:/Program Files/MySQL/MySQL Server 5.6/data6/hostname.pid6
-datadir    = C:/Program Files/MySQL/MySQL Server 5.6/data6
+pid-file   = C:/Program Files/MariaDB 10.1/data6/hostname.pid6
+datadir    = C:/Program Files/MariaDB 10.1/data6
 language   = C:/Program Files (x86)/MySQL/share/mysql/japanese
 user       = unix_user4
 EOF
@@ -840,7 +788,7 @@ sub usage
 $my_progname version $VER by Jani Tolonen
 
 Description:
-$my_progname can be used to start, reload, or stop any number of separate
+$my_progname can be used to start, or stop any number of separate
 mysqld processes running in different TCP/IP ports and UNIX sockets.
 
 $my_progname can read group [mysqld_multi] from my.cnf file. You may
@@ -858,16 +806,16 @@ integer starting from 1. These groups should be the same as the regular
 [mysqld] group, but with those port, socket and any other options
 that are to be used with each separate mysqld process. The number
 in the group name has another function; it can be used for starting,
-reloading, stopping, or reporting any specific mysqld server.
+stopping, or reporting any specific mysqld server.
 
-Usage: $my_progname [OPTIONS] {start|reload|stop|report} [GNR,GNR,GNR...]
-or     $my_progname [OPTIONS] {start|reload|stop|report} [GNR-GNR,GNR,GNR-GNR,...]
+Usage: $my_progname [OPTIONS] {start|stop|report} [GNR,GNR,GNR...]
+or     $my_progname [OPTIONS] {start|stop|report} [GNR-GNR,GNR,GNR-GNR,...]
 
-The GNR means the group number. You can start, reload, stop or report any GNR,
+The GNR means the group number. You can start, stop or report any GNR,
 or several of them at the same time. (See --example) The GNRs list can
 be comma separated or a dash combined. The latter means that all the
 GNRs between GNR1-GNR2 will be affected. Without GNR argument all the
-groups found will either be started, reloaded, stopped, or reported. Note that
+groups found will either be started, stopped, or reported. Note that
 syntax for specifying GNRs must appear without spaces.
 
 Options:
@@ -902,7 +850,7 @@ Using:  @{[join ' ', @defaults_options]}
                    file is turned on.
 --password=...     Password for mysqladmin user.
 --silent           Disable warnings.
---tcp-ip           Connect to the MySQL server(s) via the TCP/IP port instead
+--tcp-ip           Connect to the MariaDB server(s) via the TCP/IP port instead
                    of the UNIX socket. This affects stopping and reporting.
                    If a socket file is missing, the server may still be
                    running, but can be accessed only via the TCP/IP port.
@@ -910,6 +858,7 @@ Using:  @{[join ' ', @defaults_options]}
 --user=...         mysqladmin user. Using: $opt_user
 --verbose          Be more verbose.
 --version          Print the version number and exit.
+--wsrep-new-cluster  Bootstrap a cluster.
 EOF
   exit(0);
 }
