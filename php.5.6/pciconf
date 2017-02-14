@@ -1,4 +1,4 @@
-#!D:\Server\xampp\php\.\php.exe
+#!D:\Server\xampp\php.5.6\.\php.exe
 <?php
 /**
  * The Predefined Classes/Constants array script generator.
@@ -83,7 +83,7 @@ if (PEAR::isError($args)) {
 
 // version
 if ($args->isDefined('V')) {
-    echo 'PHP_CompatInfo Extensions Support List build system version 1.9.0';
+    echo 'PHP_CompatInfo Extensions Support List build system version @package_version@';
     exit(0);
 }
 
@@ -98,7 +98,7 @@ if ($args->isDefined('v')) {
 if ($args->isDefined('o')) {
     $o = $args->getValue('o');
     if (strpos($o, '@'.'php_dir@')) {
-        $o = str_replace('@'.'php_dir@', 'D:\Server\xampp\php\pear', $o);
+        $o = str_replace('@'.'php_dir@', 'C:\xampp\php\pear', $o);
     }
     if (is_dir($o) && (is_writable($o))) {
         /* Directory where to write
@@ -113,7 +113,7 @@ if ($args->isDefined('o')) {
         exit(1);
     }
 } else {
-    $target_directory = 'D:\Server\xampp\php\pear' . $ds . 'PHP' .$ds . 'CompatInfo' . $ds;
+    $target_directory = 'D:\Server\xampp\php.5.6\pear' . $ds . 'PHP' .$ds . 'CompatInfo' . $ds;
 }
 
 // enable
