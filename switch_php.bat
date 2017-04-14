@@ -36,7 +36,7 @@ echo 正在切换PHP版本为 %version%
 if exist "%CD%\php\" (rmdir "%CD%\php\")
 mklink /D "%CD%\php\" "%CD%\php.%version%\"
 
-if "%version%"=="7.0" (
+if "%version%" GEQ "7.0"  (
 	copy /y "%CD%\apache\conf\extra\httpd-xampp7" "%CD%\apache\conf\extra\httpd-xampp.conf"
 ) else (
 	copy /y "%CD%\apache\conf\extra\httpd-xampp5" "%CD%\apache\conf\extra\httpd-xampp.conf"
