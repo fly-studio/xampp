@@ -1,16 +1,13 @@
-###### ApacheFriends XAMPP Version 7.0.8 ######
- 
-Note: The Portable Version does not contain the FileZilla FTP and the Mercury Mail Server. The service installations are also disabled here.
-
+###### ApacheFriends XAMPP Version 7.0.15 ######
 
 Important! PHP in this package needs the Microsoft Visual C++ 2008 Redistributable package from
 http://www.microsoft.com/en-us/download/details.aspx?id=5582. Please ensure that the VC++ 2008 runtime
 libraries are installed on your system.    
 
-  + Apache 2.4.18
-  + MariaDB 10.1.13
-  + PHP 7.0.8 (VC14 X86 32bit thread safe) + PEAR
-  + phpMyAdmin 4.5.1
+  + Apache 2.4.25
+  + MariaDB 10.1.21
+  + PHP 7.0.15 (VC14 X86 32bit thread safe) + PEAR
+  + phpMyAdmin 4.6.5.2
   + OpenSSL 1.0.2f
   + ADOdb 518a
   + Mercury Mail Transport System v4.63 (not included in the portable version)

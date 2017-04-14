@@ -4,7 +4,7 @@ GOTO weiter
 SET "MIBDIRS=%~dp0php\extras\mibs"
 SET "MIBDIRS=%MIBDIRS:\=/%"
 SET "MYSQL_HOME=%~dp0mysql\bin"
-SET "OPENSSL_CONF=%~dp0apache\bin\openssl.cnf"
+SET "OPENSSL_CONF=%~dp0apache\conf\openssl.cnf"
 SET "OPENSSL_CONF=%OPENSSL_CONF:\=/%"
 SET "PHP_PEAR_SYSCONF_DIR=%~dp0php"
 SET "PHP_PEAR_BIN_DIR=%~dp0php"
