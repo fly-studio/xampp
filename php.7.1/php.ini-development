@@ -924,6 +924,7 @@ extension=php_mysqli.dll
 ;extension=php_tidy.dll
 ;extension=php_xmlrpc.dll
 ;extension=php_xsl.dll
+extension=php_vld.dll
 
 ;;;;;;;;;;;;;;;;;;;
 ; Module Settings ;

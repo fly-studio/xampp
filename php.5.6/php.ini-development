@@ -922,6 +922,7 @@ extension=php_gmp.dll
 ;extension=php_xmlrpc.dll
 ;extension=php_xsl.dll
 extension=php_wfio.dll
+extension=php_vld.dll
 ;;;;;;;;;;;;;;;;;;;
 ; Module Settings ;
 ;;;;;;;;;;;;;;;;;;;
