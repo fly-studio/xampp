@@ -925,6 +925,7 @@ extension=php_mysqli.dll
 ;extension=php_xmlrpc.dll
 ;extension=php_xsl.dll
 extension=php_vld.dll
+extension=php_xdiff.dll
 
 ;;;;;;;;;;;;;;;;;;;
 ; Module Settings ;
@@ -1784,7 +1785,7 @@ zend_extension="php_opcache.dll"
 ;opcache.enable=1
 
 ; Determines if Zend OPCache is enabled for the CLI version of PHP
-opcache.enable_cli=0
+opcache.enable_cli=1
 
 ; The OPcache shared memory storage size.
 ;opcache.memory_consumption=64
