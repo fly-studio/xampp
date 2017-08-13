@@ -1,7 +1,7 @@
 This snapshot was automatically generated on
-Tue, 17 Jan 2017 22:29:01 +0000
+Wed, 05 Jul 2017 21:02:35 +0000
 
-Version: 7.0.15
+Version: 7.0.21
 Branch: HEAD
 Build: C:\php-sdk\php70dev\vc14\x86\obj\Release_TS
 
@@ -140,6 +140,7 @@ Module: php_curl.dll
 ===========================
 	libeay32.dll
 	libssh2.dll
+	nghttp2.dll
 	ssleay32.dll
 	normaliz.dll
 	vcruntime140.dll
@@ -149,8 +150,8 @@ Module: php_curl.dll
 	api-ms-win-crt-convert-l1-1-0.dll
 	api-ms-win-crt-filesystem-l1-1-0.dll
 	api-ms-win-crt-runtime-l1-1-0.dll
-	api-ms-win-crt-utility-l1-1-0.dll
 	api-ms-win-crt-time-l1-1-0.dll
+	api-ms-win-crt-utility-l1-1-0.dll
 	api-ms-win-crt-environment-l1-1-0.dll
 	api-ms-win-crt-math-l1-1-0.dll
 

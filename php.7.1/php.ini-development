@@ -1933,3 +1933,15 @@ opcache.file_cache="D:\Server\xampp\tmp"
 ; Local Variables:
 ; tab-width: 4
 ; End:
+
+[xdebug]
+zend_extension = "D:\Server\xampp\php.7.1\ext\php_xdebug-2.5.1-7.1-vc14.dll"
+xdebug.auto_trace = On;
+xdebug.cli_color = On;
+xdebug.remote_autostart = On
+xdebug.remote_enable = On
+xdebug.remote_connect_back = On
+xdebug.show_error_trace = On
+xdebug.show_exception_trace = On
+;xdebug.profiler_enable = On
+;xdebug.profiler_output_dir = "d:/Server/xampp/tmp/xdebug/"
