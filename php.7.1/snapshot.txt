@@ -1,7 +1,7 @@
 This snapshot was automatically generated on
-Wed, 18 Jan 2017 19:16:28 +0000
+Thu, 06 Jul 2017 17:29:09 +0000
 
-Version: 7.1.1
+Version: 7.1.7
 Branch: HEAD
 Build: C:\php-sdk\php71\vc14\x86\obj\Release_TS
 
@@ -140,6 +140,7 @@ Module: php_curl.dll
 ===========================
 	libeay32.dll
 	libssh2.dll
+	nghttp2.dll
 	ssleay32.dll
 	normaliz.dll
 	vcruntime140.dll
@@ -149,8 +150,8 @@ Module: php_curl.dll
 	api-ms-win-crt-convert-l1-1-0.dll
 	api-ms-win-crt-filesystem-l1-1-0.dll
 	api-ms-win-crt-runtime-l1-1-0.dll
-	api-ms-win-crt-utility-l1-1-0.dll
 	api-ms-win-crt-time-l1-1-0.dll
+	api-ms-win-crt-utility-l1-1-0.dll
 	api-ms-win-crt-environment-l1-1-0.dll
 	api-ms-win-crt-math-l1-1-0.dll
 
@@ -341,7 +342,6 @@ Module: php_shmop.dll
 
 Module: php_snmp.dll
 ===========================
-	libeay32.dll
 	vcruntime140.dll
 	api-ms-win-crt-runtime-l1-1-0.dll
 	api-ms-win-crt-string-l1-1-0.dll
@@ -353,6 +353,7 @@ Module: php_snmp.dll
 	api-ms-win-crt-locale-l1-1-0.dll
 	api-ms-win-crt-environment-l1-1-0.dll
 	api-ms-win-crt-filesystem-l1-1-0.dll
+	libeay32.dll
 
 Module: php_sockets.dll
 ===========================
