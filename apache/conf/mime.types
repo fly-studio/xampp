@@ -112,9 +112,7 @@ application/exi					exi
 # application/fastsoap
 # application/fdt+xml
 # application/fits
-# application/font-sfnt
 application/font-tdpfr				pfr
-application/font-woff				woff
 # application/framework-attributes+xml
 # application/geo+json
 application/gml+xml				gml

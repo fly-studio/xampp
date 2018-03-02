@@ -1,6 +1,6 @@
 <?php
 $backslashrootreal[] = "$partwampp\apache\bin\\php.ini";
-foreach(array('5.2','5.3','5.4','5.5','5.6','7.0') as $version)
+foreach(array('5.2','5.3','5.4','5.5','5.6','7.0','7.1') as $version)
 {
 	$backslashrootreal[] = "$partwampp\php.$version\\php5.ini";
 	$backslashrootreal[] = "$partwampp\php.$version\php4\\php4.ini";

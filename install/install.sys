@@ -1,5 +1,5 @@
 DIR = D:\Server\xampp
-xampp = 5.6.11
+xampp = 7.1.14
 
 server = 1.8.0
 perl = 0

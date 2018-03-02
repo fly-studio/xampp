@@ -5,7 +5,7 @@
 <IfModule env_module>
     SetEnv MIBDIRS "/Server/xampp/php/extras/mibs"
     SetEnv MYSQL_HOME "\\xampp\\mysql\\bin"
-    SetEnv OPENSSL_CONF "/Server/xampp/php/extras/openssl/openssl.cnf"
+    SetEnv OPENSSL_CONF "D:/Server/xampp/apache/bin/openssl.cnf"
     SetEnv PHP_PEAR_SYSCONF_DIR "\\xampp\\php"
     SetEnv PHPRC "\\xampp\\php"
     SetEnv TMP "\\xampp\\tmp"
