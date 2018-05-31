@@ -5,6 +5,7 @@ apache/bin/IM_MOD*
 apache/bin/msvc*.dll
 apache/bin/ucrtbase.dll
 apache/bin/vc*.dll
+apache/logs/
 php*/api-ms-win-*.dll
 php*/CORE_RL*
 php*/IM_MOD*
@@ -12,3 +13,4 @@ php*/msvc*.dll
 php*/ucrtbase.dll
 php*/concrt*.dll
 php*/vc*.dll
+tmp/

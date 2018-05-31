@@ -736,7 +736,7 @@ user_dir =
 ; extension_dir = "./"
 ; On windows:
 ; extension_dir = "ext"
-extension_dir = "D:\Server\xampp\php.7.1\ext"
+extension_dir = "./ext"
 ; Directory where the temporary files should be placed.
 ; Defaults to the system default (see sys_get_temp_dir)
 ; sys_temp_dir = "/tmp"
@@ -904,6 +904,7 @@ extension=php_mbstring.dll
 ;extension=php_exif.dll      ; Must be after mbstring as it depends on it
 extension=php_mysqli.dll
 ;extension=php_oci8_12c.dll  ; Use with Oracle Database 12c Instant Client
+;extension=php_odbc.dll
 ;extension=php_openssl.dll
 ;extension=php_pdo_firebird.dll
 ;extension=php_pdo_mysql.dll
@@ -1936,7 +1937,7 @@ opcache.file_cache="D:\Server\xampp\tmp"
 ; End:
 
 [xdebug]
-zend_extension = "D:\Server\xampp\php.7.1\ext\php_xdebug-2.5.1-7.1-vc14.dll"
+zend_extension = "php_xdebug-2.5.1-7.1-vc14.dll"
 xdebug.auto_trace = On;
 xdebug.cli_color = On;
 xdebug.remote_autostart = On
