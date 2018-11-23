@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 # -*- cperl -*-
 #
-# Copyright (c) 2007, 2015, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2007, 2017, Oracle and/or its affiliates. All rights reserved.
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -45,7 +45,7 @@ my $cwd = cwd();
 my $basedir;
 
 my $socket  = '/tmp/mysql.sock';
-my $version = '5.7.17';
+my $version = '5.7.24';
 
 sub which
 {
@@ -142,17 +142,17 @@ my $me = get_full_path($0);
 $basedir = dirname(dirname($me)); # Remove "/bin/mysql_config" part
 
 my $ldata   = 'C:/Program Files/MySQL/MySQL Server 5.7/data';
-my $execdir = 'C:/Program Files (x86)/MySQL/bin';
-my $bindir  = 'C:/Program Files (x86)/MySQL/bin';
+my $execdir = 'C:/Program Files/MySQL/bin';
+my $bindir  = 'C:/Program Files/MySQL/bin';
 
 # ----------------------------------------------------------------------
 # If installed, search for the compiled in directory first (might be "lib64")
 # ----------------------------------------------------------------------
 
-my $pkglibdir = fix_path('C:/Program Files (x86)/MySQL/lib',"libmysql/relwithdebinfo",
+my $pkglibdir = fix_path('C:/Program Files/MySQL/lib',"libmysql/relwithdebinfo",
                          "libmysql/release","libmysql/debug","lib/mysql","lib");
 
-my $pkgincludedir = fix_path('C:/Program Files (x86)/MySQL/include', "include/mysql", "include");
+my $pkgincludedir = fix_path('C:/Program Files/MySQL/include', "include/mysql", "include");
 
 # Assume no argument with space in it
 my @ldflags = split(" ",'');
@@ -172,13 +172,13 @@ my(@lib_opts,@lib_e_opts);
 if ( $^O eq "MSWin32" )
 {
   my $linkpath   = "$pkglibdir";
-  @lib_opts   = ("$linkpath/mysqlclient");
+  @lib_opts   = ("$linkpath/LIBMYSQL_OS_OUTPUT_NAME-NOTFOUND");
   @lib_e_opts = ("$linkpath/mysqlserver");
 }
 else
 {
   my $linkpath   = "-L$pkglibdir";
-  @lib_opts   = ($linkpath,"-lmysqlclient");
+  @lib_opts   = ($linkpath,"-lLIBMYSQL_OS_OUTPUT_NAME-NOTFOUND");
   @lib_e_opts = ($linkpath,"-lmysqlserver");
 }
 
@@ -188,8 +188,8 @@ $flags->{libs} = [@lib_opts, qw(ws2_32 Secur32)];
 $flags->{embedded_libs} = [@lib_e_opts, qw(ws2_32)];
 
 $flags->{include} = ["-I$pkgincludedir"];
-$flags->{cflags}  = [@{$flags->{include}},split(" ",'/MT /Z7 /O2 /Ob1 /D NDEBUG /EHsc')];
-$flags->{cxxflags}= [@{$flags->{include}},split(" ",'/MT /Z7 /O2 /Ob1 /D NDEBUG /EHsc')];
+$flags->{cflags}  = [@{$flags->{include}},split(" ",'')];
+$flags->{cxxflags}= [@{$flags->{include}},split(" ",'')];
 
 my $include =       quote_options(@{$flags->{include}});
 my $cflags  =       quote_options(@{$flags->{cflags}});
