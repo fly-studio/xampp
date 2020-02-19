@@ -67,6 +67,9 @@ if not "%1"=="" (
 		for /f "tokens=3,4 delims= " %%c in ('dir "%CD%\%1" ^| FIND "vcomp"') do (
 			del %CD%\%1\%%d
 		)
+		for /f "tokens=3,4 delims= " %%c in ('dir "%CD%\%1" ^| FIND "api-ms-"') do (
+			del %CD%\%1\%%d
+		)
 		echo done!
 		echo.
 	)
